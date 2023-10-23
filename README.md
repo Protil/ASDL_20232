@@ -6,8 +6,8 @@
 - [x] 3f
 - [x] 3g
 - [x] 3h
-- [ ] 4i
-- [ ] 4j
-- [ ] 4k
-- [ ] 4l
-- [ ] Opcional
+- [x] 4i
+- [x] 4j
+- [x] 4k
+- [x] 4l
+- [x] Opcional
