@@ -57,6 +57,22 @@ hold off;
 
 
 
+figure(2);
+
+periodo = R*C; dur = 10*R*C;
+[x, tx] = gensig("sin", periodo, dur, T);
+
+s = conv(x, h1d)*T;
+Ls = length(s);
+t3 = linspace(0, Ls*T, Ls);
+
+plot(tx, x);
+hold on
+plot(t3, s);
+grid;
+legend('entrada', 'saida');
+title('Sistema de 1a. ordem');
+hold off
 
 
 

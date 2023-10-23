@@ -37,57 +37,24 @@ xlabel('tempo (s)');
 ylabel('tensão saída (V)');
 title('Resposta Impulsiva');
 grid;
-
-
-
 Lu = 50;
 t2 = linspace(0,L/R, Lu);
 u = ones(1, Lu);
 h1d = double(h1);
 s = conv(u, h1d)*T;
+    
 
-Ls = length(s)
+Ls = length(s);
 
 t3 = linspace(0, Ls*T, Ls);
-
 subplot(2, 2, 3);
-
-hold on;
-
+hold on;  
 plot(t3, [u zeros(1, Ls - Lu)]);
-
+    
 %subplot(2,2, 4);
 plot(t3, s);
 hold off;
-
-range = 0:5:500
-
-for Lu = range
-    t2 = linspace(0,L/R, Lu);
-    u = ones(1, Lu);
-    h1d = double(h1);
-    s = conv(u, h1d)*T;
-    
-    Ls = length(s);
-    
-    t3 = linspace(0, Ls*T, Ls);
-    
-    subplot(2, 2, 3);
-    
-    hold on;
-    
-    plot(t3, [u zeros(1, Ls - Lu)]);
-    
-    %subplot(2,2, 4);
-    plot(t3, s);
-    hold off;
-
-        % Pause for a short duration to create the animation effect
-    pause(0.001);
-
-    % Clear the current plot to update it in the next iteration
-    clf;
-end 
+grid
 
 
 
