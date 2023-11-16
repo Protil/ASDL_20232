@@ -3,9 +3,9 @@
 clc
 
 close all
-obj = VideoWriter("Variação da Frequencia Angular_120FPS", "MPEG-4");
+obj = VideoWriter("Variação da Frequencia Angular_90FPS", "MPEG-4");
 obj.Quality = 100;
-obj.FrameRate = 120;
+obj.FrameRate = 90;
 open(obj)
 
 R = 1; % Valor do Resistor 
@@ -62,7 +62,10 @@ hold on
 plot(t3, s);
 grid;
 legend('saida');
-title(sprintf('Amplitude de Saida = %i', max(s)));
+defasagem = finddelay(x, s) * T * 360/periodo
+
+title('Resposta RL Onda Senoidal Frequência Variante');
+subtitle(sprintf('Amplitude Máxima(V) = %i\nFrequência(Hz) = %i\nDefasagem(Graus): %i', max(s), 1/periodo, defasagem))
 hold off
 
 
@@ -82,8 +85,10 @@ for coeficiente_fw = 1:0.1:100
     grid;
     legend('entrada', 'saida');
     %title('Sistema de 1a. ordem');
+    defasagem = finddelay(x, s) * T * 360/periodo
+
     title('Resposta RL Onda Senoidal Variante');
-    subtitle(sprintf('A_{max} = %i, f = %i', max(s), 1/periodo))
+subtitle(sprintf('Amplitude Máxima(V) = %i\nFrequência(Hz) = %i\nDefasagem(Graus): %i', max(s), 1/periodo, defasagem))
 
     hold off
     writeVideo(obj, getframe(gcf));

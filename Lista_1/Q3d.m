@@ -24,7 +24,7 @@ subplot(2, 2, 1);
 plot(t1, y1);
 xlabel('Tempo (s)');
 ylabel('Tensão de Saída (V)');
-title('Resposta ao Degrau Diferencial');
+title('Resposta ao Degrau');
 
 grid;
 

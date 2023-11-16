@@ -52,13 +52,4 @@ xlabel('n');
 legend("x[n]", "y[n]"); title("Funçao filter()");
 hold OFF
 
-disp("Primeiro Som");
-pause(1);
-sound(x, fs);
-disp("Segundo Som");
-pause(1);
-sound(y, fs);
 
-
-audiowrite('teste.wav', y, fs, 'BitsPerSample',16);
-info = audioinfo('teste.wav');

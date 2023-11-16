@@ -5,7 +5,7 @@ clc
 
 alfa = 0.1;
 y_ant = 0;
-N = 10000;
+N = 100;
 f1 = 1/40;
 A1 = 1;
 f2 = 1/5;
@@ -64,7 +64,7 @@ function MudancaSlide(sliderObj, event, slider_f2, slider_A2, slider_alpha, f)
 
     alfa = (get(slider_alpha,'Value'));
     y_ant = 0;
-    N = 10000;
+    N = 100;
     f1 = 1/40;
     A1 = 1;
     f2 = (get(slider_f2,'Value'));

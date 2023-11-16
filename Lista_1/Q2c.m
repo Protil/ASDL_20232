@@ -33,8 +33,8 @@ h = diff(y);
 h1 = subs(h,t,t1);
 plot(t1, h1);
 
-xlabel('tempo (s)');
-ylabel('tensão saída (V)');
+xlabel('Tempo (s)');
+ylabel('Tensão saída (V)');
 title('Resposta Impulsiva');
 grid;
 
