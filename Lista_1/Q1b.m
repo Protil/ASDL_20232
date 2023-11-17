@@ -50,6 +50,34 @@ ylabel('Tensão de Saída (V)');
 title('Resposta ao Degrau Diferencial 10 \tau');
 grid;
 
+% Função exponencial informada no estudo dirigido 
+y_exp = 1*(1 - exp(-(R/L)*t)); 
+y_exp_sub = subs(y_exp, t, t1);
 
+% Grafico de ambas as funções sobrepostas
+figure(2);
 
+subplot(2, 1, 1);
+plot(t1, y1, t1, y_exp_sub);
+legend('Diferencial', 'Exponencial')
+xlabel('Tempo (s)');
+ylabel('Tensão de Saída (V)');
+title('Diferencial e Exponencial Sobrepostas');
+grid;
 
+% Grafico da diferença entre as funções
+subplot(2, 1, 2);
+plot(t1, y1 - y_exp_sub);
+xlabel('Tempo (s)');
+ylabel('Tensão de Saída (V)');
+title('Diferença Diferencial e Exponencial');
+grid;
+
+func_iguais = isequal(y, y_exp); % Compara as duas funções e retorna 1 se forem iguais, senão 0
+
+% Display no console da igualdade entre funções 
+if (func_iguais)
+    disp("As funções são iguais");
+else 
+    disp("As funções são diferentes");
+end
