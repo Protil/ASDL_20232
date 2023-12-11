@@ -12,7 +12,7 @@ figure(1);
 hold on;
 t1 = 0:0.1:20;
 
-h1 = subs(h, {t, wn, zeta}, {t1 1 0.1}); %wn = 1, zeta = 0.1
+h1 = subs(h, {t, wn, zeta}, {t1 2 0.1}); %wn = 1, zeta = 0.1
 h2 = subs(h, {t, wn, zeta}, {t1 1 0.8}); %wn = 1, zeta = 0.8
 h3 = subs(h, {t, wn, zeta}, {t1 1 1.1}); %wn = 1, zeta = 1.1
 
